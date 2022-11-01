@@ -1,0 +1,21 @@
+
+
+.nav{background: rgb(17,15,59);
+    background: linear-gradient(90deg, rgba(17,15,59,1) 4%, rgba(15,49,98,1) 40%, rgba(49,89,121,1) 100%);
+
+}
+
+.btn-success{background-color:rgb(3, 187, 3);
+border-color: rgb(3, 187, 3);}
+
+.nav{height: fit-content;}
+
+.container{
+    background-color: rgb(193, 217, 248);
+    border-color:lightblue;
+    color: darkblue;
+    
+}
+
+
+

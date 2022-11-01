@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo Práctico Integrador JavaScript</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<link rel="stylesheet" href="css.css">
+
+<script>
+function totalAPagar(){
+    let precio=200
+    let importe=0
+    let cantidad=document.getElementById("cantidad").value
+    let categoria=document.getElementById("categoria").value
+    
+    if (cantidad>0) {
+        switch (categoria) {
+            case "Estudiante":
+                importe=cantidad*precio*0.2
+                break;
+            case "Trainee":
+                importe=cantidad*precio*0.5
+                break;
+            case "Junior":
+                importe=cantidad*precio*0.85
+                break;
+            default:
+                break;
+        }
+    }
+    return document.getElementById("importeapagar").innerHTML= "Total a pagar: $" + importe
+}
+
+
+function borrar(){
+    document.getElementById("cantidad").value=""
+    document.getElementById("categoria").value=""
+    document.getElementById("email").value=""
+    document.getElementById("nombre").value=""
+    document.getElementById("apellido").value=""
+    document.getElementById("importeapagar").innerHTML='Total a pagar: $'
+}
+
+</script>
+
+
+</head>
+
+<body>
+    <header>
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="https://rominadadi.github.io/tpintegrador/">Conf Bs As</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">La conferencia</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Los oradores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">El lugar y la fecha</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Conviértete en orador</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-success" href="#">Comprar tickets</a>  
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+    </header>
+
+     <main>
+        <div class="row row-cols-md-3 g-4 mt-5" style="justify-content: center ; margin-left: 15%; margin-right: 15%;">
+            <div class="card-deck">
+              <div class="card border-primary rounded-0">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Estudiante</h5>
+                  <p class="card-text">
+                    Tienen un descuento
+                  </p>
+                  <h6 class="card-text" style="font-weight:bold ;">80%</h6>
+                  <p class="text-muted small">* presentar documentación</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card border-info rounded-0">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Trainee</h5>
+                  <p class="card-text">
+                    Tienen un descuento
+                  </p>
+                  <h6 class="card-text" style="font-weight:bold ;">50%</h6>
+                  <p class="text-muted small">* presentar documentación</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card border-warning rounded-0">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Junior</h5>
+                  <p class="card-text">Tienen un descuento</p>
+                  <h6 class="card-text" style="font-weight:bold ;">15%</h6>
+                  <p class="text-muted small">* presentar documentación</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          </div>
+
+          <p class="text-center mt-3 text-uppercase mb-0">venta</p>
+          <h1 class="text-center text-uppercase">valor de ticket $200</h1>
+
+          <form>
+            <div class="row d-flex justify-content-center mt-3">
+              <div class="col-sm-4">
+                <input type="text" class="form-control" placeholder="Nombre" name="Nombre" id="nombre">
+              </div>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" placeholder="Apellido" name="Apellido" id="apellido">
+              </div>
+            </div>
+            
+            <div class="row d-flex justify-content-center mt-3">
+              <div class="col-sm-8">
+                <input type="email" class="form-control" placeholder="Correo" name="Correo" id="email">
+                
+                <div class="row d-flex justify-content-center mt-3">
+                    <div class="col">
+                      <label for="Cantidad">Cantidad</label>  
+                      <input type="number" class="form-control mt-3" placeholder="Cantidad" name="Cantidad" id="cantidad">
+                    </div>
+                    <div class="col">
+                        <label for="Categoría">Categoría</label>
+                        <select class="form-select mt-3" id="categoria">
+                            <option>Estudiante</option>
+                            <option>Trainee</option>
+                            <option>Junior</option>
+                          </select>                        
+                    </div>
+                    </div>
+                  </div> 
+
+                <div class="col-sm-8">
+                  <div class="container mt-3 border-info rounded py-3 mb-3" id="importeapagar">Total a pagar: $
+
+                  </div>                         
+                </div>
+
+        </div>
+
+        <div class="grid d-flex gap-2 justify-content-center">
+              <button type="button" onclick="borrar()" class="btn btn-success btn-block mt-3 col-sm-4">Borrar</button>
+              <button type="button" onclick="totalAPagar()" class="btn btn-success btn-block mt-3 col-sm-4">Resumen</button>
+        </div>
+        
+
+      
+          </form>
+      
+
+     </main>
+
+         <!--FOOTER-->
+    <footer>  
+        <nav class="nav nav-justified flex-nowrap mt-3">
+            <a class="nav-link text-light" href="#">Preguntas <br> frecuentes</a>
+            <a class="nav-link text-light" href="#">Contáctanos</a>
+            <a class="nav-link text-light" href="#">Prensa</a>
+            <a class="nav-link text-light" href="#">Conferencias</a>
+            <a class="nav-link text-light" href="#">Términos y <br> condiciones</a>
+            <a class="nav-link text-light" href="#">Privacidad</a>
+            <a class="nav-link text-light" href="#">Estudiantes</a>
+        </nav>
+  </footer>
+
+
+    
+</body>  
